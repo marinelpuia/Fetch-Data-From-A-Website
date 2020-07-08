@@ -25,7 +25,7 @@ public class FetchDataMiamiCounty {
 	        
 	        Document document = Jsoup.connect(URL + USER_SEARCH_KEY_STRING).referrer(URL + USER_SEARCH_KEY_STRING).get();
 	        
-	        // link to open more account details
+	        // link to open more account details (ATS internal link) not yet implemented in this class
 	        Elements businessAccount = document.select("div.identifier");
 	        String businessAccountLink = businessAccount.select("a").first().text();
 	        
@@ -45,7 +45,7 @@ public class FetchDataMiamiCounty {
 	        String occupationLabel = businessProfile.select("div.headers").first().text();
 	        String occupation = businessProfile.select("div.data-qualifier > p").first().text();
 	        
-	        // pay bill button container	        
+	        // pay bill button container (bill status)	        
 	        Elements billStatus = document.select("div.pay-bill-button-container");
 	        String bill = billStatus.select("div.pay-bill-button-container").first().text();
 	        
@@ -57,8 +57,8 @@ public class FetchDataMiamiCounty {
 	        // all companies found on the first page
 	        Elements allBusinessAcc = document.select("div.result");
 	        
-	        // number of business found
-	        int count = 0;
+	        // number of business found (first page)
+	        int count = 0; 
 	        // print out all companies found on the first page using for loop
 	        for(Element businessList: allBusinessAcc) {
 	        	count++;
