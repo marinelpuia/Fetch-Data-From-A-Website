@@ -9,12 +9,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class FetchDataMiamiCounty {
+	
+	static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
 		try {
-		
-			Scanner scanner = new Scanner(System.in);
+				
 			System.out.println("Please enter a name or account number:\n");
 			
 			String USER_SEARCH_KEY_STRING = scanner.nextLine();
@@ -53,16 +54,19 @@ public class FetchDataMiamiCounty {
 	        
 	        System.out.println("\n*************** ALL COMPANIES FOUND ON THIS PAGE ****************");
 	        
-	        // print out all companies found on the first page using for loop
+	        // all companies found on the first page
 	        Elements allBusinessAcc = document.select("div.result");
-	        int i = 0;
+	        
+	        // number of business found
+	        int count = 0;
+	        // print out all companies found on the first page using for loop
 	        for(Element businessList: allBusinessAcc) {
-	        	i++;
-	        	System.out.println("\n(" + i + ") " + businessList.select("a").first().text() + " \n\t "
-	        	                                    + businessList.select("div.data-address").first().text() + " \n\t "
-	        	                                    + businessList.select("div.actions").first().text() + " \n\t "
-	        	                                    + occupationLabel + ": " + businessList.select("div.data-qualifier > p").first().text() + " \n\t "
-	        	                                    + businessList.select("div.pay-bill-button-container").first().text()); 	
+	        	count++;
+	        	System.out.println("\n(" + count + ") " + businessList.select("a").first().text() + " \n\t "
+	        	                                        + businessList.select("div.data-address").first().text() + " \n\t "
+	        	                                        + businessList.select("div.actions").first().text() + " \n\t "
+	        	                                        + occupationLabel + ": " + businessList.select("div.data-qualifier > p").first().text() + " \n\t "
+	        	                                        + businessList.select("div.pay-bill-button-container").first().text()); 	
 	        }
 	        
 	        
