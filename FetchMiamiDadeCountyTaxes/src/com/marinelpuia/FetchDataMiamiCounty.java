@@ -49,7 +49,6 @@ public class FetchDataMiamiCounty {
 	        Elements billStatus = document.select("div.pay-bill-button-container");
 	        String bill = billStatus.select("div.pay-bill-button-container").first().text();
 	        
-	        
 	        System.out.println("\t" + nameAndAddress + "\n\t" + accDetails + "\n\t" + occupationLabel + ": " + occupation + "\n\t" + bill);
 	        
 	        System.out.println("\n*************** ALL COMPANIES FOUND ON THIS PAGE ****************");
