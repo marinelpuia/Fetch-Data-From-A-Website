@@ -51,7 +51,7 @@ public class FetchDataMiamiCounty {
 	        
 	        System.out.println("\t" + nameAndAddress + "\n\t" + accDetails + "\n\t" + occupationLabel + ": " + occupation + "\n\t" + bill);
 	        
-	        System.out.println("\n*************** ALL COMPANIES FOUND ON THIS PAGE ***************");
+	        System.out.println("\n*************** ALL COMPANIES FOUND ON THIS PAGE ****************");
 	        
 	        // print out all companies found on the first page using for loop
 	        Elements allBusinessAcc = document.select("div.result");
